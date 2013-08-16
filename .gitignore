@@ -24,4 +24,4 @@
 !Vagrantfile
 !puppet/*
 !.gitignore
-*.sh
+!*.sh
