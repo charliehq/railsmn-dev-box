@@ -75,8 +75,7 @@ exec { 'install_ruby':
   # interactive environment, in particular to display messages or ask questions.
   # The rvm executable is more suitable for automated installs.
   #
-  # Thanks to @mpapis for this tip.
-  
+  # Thanks to @mpapis for this tip.  
   command => "${as_vagrant} '${home}/.rvm/bin/rvm install ruby-2.0.0-p353 --latest-binary --autolibs=enabled && rvm --fuzzy alias create default 2.0.0'",
   creates => "${home}/.rvm/bin/ruby",
   require => Exec['install_rvm']
