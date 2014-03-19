@@ -76,7 +76,13 @@ exec { 'install_ruby':
   # The rvm executable is more suitable for automated installs.
   #
   # Thanks to @mpapis for this tip.
-  command => "${as_vagrant} '${home}/.rvm/bin/rvm install 2.0.0 --latest-binary --autolibs=enabled && rvm --fuzzy alias create default 2.0.0'",
+  
+  # the below command line did not installed ruby correctly.
+  # command => "${as_vagrant} '${home}/.rvm/bin/rvm install 2.0.0-p353 --latest-binary --autolibs=enabled && rvm --fuzzy alias create default 2.0.0'",
+  # the below command line installed ruby correctly.
+  command => "${as_vagrant} '${home}/.rvm/bin/rvm install ruby-2.0.0-p353 --latest-binary --autolibs=enabled && rvm --fuzzy alias create default 2.0.0'",
+  #timeout => 1800,
+  #started 9:23 ended at 9:30
   creates => "${home}/.rvm/bin/ruby",
   require => Exec['install_rvm']
 }
