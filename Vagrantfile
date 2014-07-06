@@ -14,5 +14,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, :path => 'vagrant_init.sh'
   
-  config.vm.synced_folder "C:/RubyOnRailsVM", "/home/vagrant/open_camp"
+  config.vm.synced_folder "./project", "/project"
 end

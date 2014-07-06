@@ -86,7 +86,9 @@ exec { "${as_vagrant} 'gem install bundler --no-rdoc --no-ri'":
   require => Exec['install_ruby']
 }
 
-exec { "${as_vagrant} 'gem install rails --no-rdoc --no-ri'":
+exec { 
+	'install_rails':
+  command => "${as_vagrant} 'gem install rails --no-rdoc --no-ri'",
   creates => "${home}/.rvm/bin/rails",
   require => Exec['install_ruby']
 }
@@ -97,3 +99,5 @@ file {
   owner => "vagrant", group => "vagrant", mode => 0664;
 }
 
+# exec { "${as_vagrant} 'cd open_camp/ && rails server -d'":    require => Exec['install_rails']
+}
