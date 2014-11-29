@@ -45,6 +45,12 @@ package { 'nodejs':
   ensure => installed
 }
 
+# --- Redis -----------------------------------------------------------------------
+package { 'redis-server':
+    ensure => present,
+}
+
+
 # --- MongoDB ---------------------------------------------------------------------
 
 package { 'mongodb':
