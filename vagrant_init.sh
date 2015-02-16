@@ -1,2 +1,1 @@
-echo 'Installing Redis'
-sudo apt-get install redis-server
+# anything you need to run on boot goes here

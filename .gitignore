@@ -13,10 +13,8 @@
 # will not be added to this git respository.
 #
 
-
-# ignore all files
-*
-
+# ignore vagrant machine info
+.vagrant
 
 # do not ignore these files/folders, IE they should be in git.
 #
